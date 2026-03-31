@@ -1,15 +1,25 @@
 #!/bin/bash
 
-read -p "Tool you use daily: " TOOL
-read -p "Meaning of freedom: " FREEDOM
-read -p "What will you build: " BUILD
+# Script 5: Open Source Manifesto Generator
+# Author: Tanisha Manshani
+# Course: Open Source Software
 
+echo "Answer the following questions to generate your manifesto:"
+echo ""
+
+# -------- User Input --------
+read -p "1. Tool you use daily: " TOOL
+read -p "2. Meaning of freedom: " FREEDOM
+read -p "3. What will you build: " BUILD
+
+# -------- Variables --------
 DATE=$(date)
-OUTPUT="manifesto.txt"
+OUTPUT="manifesto_$(whoami).txt"
 
-echo "On $DATE, I believe in open source." > $OUTPUT
-echo "I use $TOOL daily." >> $OUTPUT
-echo "Freedom means $FREEDOM." >> $OUTPUT
-echo "I will build $BUILD and share it freely." >> $OUTPUT
+# -------- Generate Manifesto --------
+echo "On $DATE, I believe in open source. I use $TOOL daily. Freedom means $FREEDOM to me. I will build $BUILD and share it freely so others can learn, improve, and grow." > "$OUTPUT"
 
-cat $OUTPUT
+# -------- Display Output --------
+echo ""
+echo "Manifesto saved to $OUTPUT"
+cat "$OUTPUT"
